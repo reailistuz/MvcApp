@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<MvcApp.Models.Employee>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form method="post" action="/Home/Upload" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="uploadedFile" id="uploadedFile" accept=".csv" class="form-control-file">
+            <button type="submit">Import</button>
+        </div>
+    </form>
+    <div>
+        @if (ViewBag.Message != null)
+        {
+            <p>@ViewBag.Message</p>
+        }
+
+        @if (ViewBag.ProcessedRowCount != null)
+        {
+            <p>Successfully processed @ViewBag.ProcessedRowCount rows.</p>
+        }
+    </div>
+</div>
+
+<div class="container">
+    @Html.Partial("~/Views/Employees/Index.cshtml")
+</div>
