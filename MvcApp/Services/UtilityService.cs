@@ -18,20 +18,5 @@ namespace MvcApp.Services
             _hostingEnvironment = hostingEnvironment;
             _context = context;
         }
-
-        //public async Task<IActionResult> Edit(Guid? id)
-        //{
-        //    if (id == null || _context.Employee == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var employee = await _context.Employee.FindAsync(id);
-        //    if (employee == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(employee);
-        //}
     }
 }
