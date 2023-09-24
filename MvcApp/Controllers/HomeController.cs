@@ -114,9 +114,9 @@ namespace MvcApp.Controllers
             return View(employees.ToList());
         }
 
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> EditAsync(string? id)
         {
-            if (id == null || _dbContext.Employee == null)
+            if (string.IsNullOrEmpty(id) || _dbContext.Employee == null)
             {
                 return NotFound();
             }
