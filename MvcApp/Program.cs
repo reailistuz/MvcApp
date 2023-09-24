@@ -11,6 +11,7 @@ builder.Services.AddDbContext<MvcAppContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddLogging();
 builder.Services.AddTransient<ICsvService, CsvService>();
 
 var app = builder.Build();
